@@ -8,3 +8,6 @@
 
 # ignore dSYM directories
 *.dSYM
+
+# all cc output
+*.out

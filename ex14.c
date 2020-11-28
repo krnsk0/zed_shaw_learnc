@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 // forward declarations
-int can_print_it(char ch);
-void print_letters(char arg[]);
+void print_letters(char arg[], int length);
 
 void print_arguments(int argc, char *argv[])
 {
@@ -11,29 +11,25 @@ void print_arguments(int argc, char *argv[])
 
   for (i = 1; i < argc; i += 1)
   {
-    print_letters(argv[i]);
+    print_letters(argv[i], strlen(argv[i]));
   }
 }
 
-void print_letters(char arg[])
+void print_letters(char arg[], int length)
 {
   int i;
   char ch;
 
-  for (i = 0; (ch = arg[i]) != '\0'; i += 1)
+  for (i = 0; i < length; i += 1)
   {
-    if (can_print_it(ch))
+    ch = arg[i];
+    if (isalpha((int)ch) || isblank((int)ch) || isdigit((int)ch))
     {
       printf("%c: %d\t ", ch, ch);
     }
   }
 
   printf("\n");
-}
-
-int can_print_it(char ch)
-{
-  return isalpha((int)ch) || isblank((int)ch);
 }
 
 int main(int argc, char *argv[])

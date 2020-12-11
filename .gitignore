@@ -11,3 +11,5 @@
 
 # all cc output
 *.out
+
+.DS_Store

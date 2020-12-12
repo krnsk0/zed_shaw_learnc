@@ -1,11 +1,5 @@
 .vscode/
 
-# Ignore all
-*
-
-# Unignore all with extensions
-!*.*
-
 # ignore dSYM directories
 *.dSYM
 
